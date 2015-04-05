@@ -44,12 +44,18 @@ public  class PlayMusicService extends Activity  implements OnClickListener {
 	        switch (v.getId()) {  
 	        case R.id.play:                             // play music  
 	            op = 1;  
+	            intent.putExtra("op",op);  
+		        startService(intent);   
 	            break;  
 	        case R.id.stop:                             // stop music  
-	            op = 2;  
+	            op = 2;
+	            intent.putExtra("op",op);  
+		        startService(intent);   
 	            break;  
 	        case R.id.pause:                            // pause music  
 	            op = 3;  
+	            intent.putExtra("op",op);  
+		        startService(intent);   
 	            break;  
 	        case R.id.close:                            // close activity  
 	            this.finish();  
@@ -62,9 +68,7 @@ public  class PlayMusicService extends Activity  implements OnClickListener {
 	        }  
 	  
 	        
-	        intent.putExtra("op",op);  
-	          
-	        startService(intent);                           // startService  
+	    
 	    }  
 	  
 	  
